@@ -1,0 +1,3 @@
+# roles to update repository
+- name: Update
+  apt: update_cache=yes

@@ -1,0 +1,8 @@
+---
+- hosts: webcepat
+  become: yes
+  roles: 
+    - common
+    - apache2
+    - mysql
+    - php

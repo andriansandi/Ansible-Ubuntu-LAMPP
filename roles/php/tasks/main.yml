@@ -1,0 +1,21 @@
+---
+- name: Install PHP
+  apt: name={{item}} state=present
+  with_items:
+    - php 
+    - php-mcrypt
+    - php-mysql 
+    - php-common
+    - php-tidy
+    - php-xml
+    - php-xmlrpc
+    - php-mbstring
+    - php-memcached
+    - php-curl
+    - php-zip
+    - libapache2-mod-php
+  notify:
+    - restart apache2
+
+- name: Add info.php file
+  copy: src=templates/php/info.php dest=/var/www/html/info.php
